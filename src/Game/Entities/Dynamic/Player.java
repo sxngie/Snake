@@ -35,7 +35,7 @@ public class Player {
 
     public void tick(){
         moveCounter++;
-        if(moveCounter>=5) {
+        if(moveCounter>=3) {
             checkCollisionAndMove();
             moveCounter=0;
         }
