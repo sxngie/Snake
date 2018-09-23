@@ -21,13 +21,14 @@ public abstract class UIObject {
         this.x=x;
         this.y=y;
         bounds = new Rectangle((int)x,(int)y,width,height);
+        
+        
 
     }
 
     public abstract void tick();
     public abstract void render(Graphics g);
     public abstract void onClick();
-
 
     public void onMousePressed(MouseEvent e) {
         active=true;

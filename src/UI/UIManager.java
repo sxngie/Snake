@@ -50,7 +50,7 @@ public class UIManager {
     }
 
     public void addObjects (UIObject o){
-        objects.add(o);
+    	objects.add(o);
     }
 
     public void removeObsjects(UIObject o){
