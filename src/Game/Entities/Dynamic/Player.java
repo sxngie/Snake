@@ -37,7 +37,7 @@ public class Player {
     }
    
     public void tick(){
-    	nKey();
+    	//nKey();
         moveCounter++;
         if(moveCounter>=speedCounter) {
             checkCollisionAndMove();
@@ -59,7 +59,12 @@ public class Player {
     	{
     		speedCounter++;
     	}
-    	
+    	if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_N)) 
+    	{
+    		lenght++;
+            Tail tail= new Tail(this.xCoord,this.yCoord,handler);
+            handler.getWorld().body.addLast(tail);
+    	}
 
     }
 
@@ -238,6 +243,7 @@ public class Player {
         handler.getWorld().body.addLast(tail);
         handler.getWorld().playerLocation[tail.x][tail.y] = true;
     }
+    /*
     public void nKey(){
     	if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_N))
     	{
@@ -325,7 +331,7 @@ public class Player {
                             tail=(new Tail(this.xCoord-1,this.yCoord,handler));
                         }else{
                             tail=(new Tail(this.xCoord+1,this.yCoord,handler));
-                        } System.out.println("Tu biscochito");
+                        } System.out.println("Tu biscochito--haha, funny.");
                     }
                 }else{
                     if(handler.getWorld().body.getLast().y!=0){
@@ -345,7 +351,7 @@ public class Player {
         handler.getWorld().playerLocation[tail.x][tail.y] = true;
     	}
     }
-    
+    */
     public void kill(){
         lenght = 0;
         for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
