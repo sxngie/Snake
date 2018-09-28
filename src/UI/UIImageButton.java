@@ -26,13 +26,13 @@ public class UIImageButton extends UIObject{
     public void render(Graphics g) {
         if(active){
             if(images.length==3) {
-                g.drawImage(images[2], (int) x, (int) y, width, heith, null);
+                g.drawImage(images[2], (int) x-60, (int) y, width*2, heith*2, null);
             }
         }
         else if(hovering){
-            g.drawImage(images[1],(int)x,(int)y,width,heith,null);
+            g.drawImage(images[1],(int)x-60,(int)y,width*2,heith*2,null);
         }else{
-            g.drawImage(images[0],(int)x,(int)y,width,heith,null);
+            g.drawImage(images[0],(int)x-60,(int)y,width*2,heith*2,null);
 
         }
     }
