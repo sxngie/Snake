@@ -28,8 +28,8 @@ public class Images {
 
         try {
 
-            title = ImageIO.read(getClass().getResourceAsStream("/Sheets/TitleFINALFIX.png"));
-            Pause = ImageIO.read(getClass().getResourceAsStream("/Buttons/Pause.png"));
+            title = ImageIO.read(getClass().getResourceAsStream("/Sheets/TitleFINAAL.png"));
+            Pause = ImageIO.read(getClass().getResourceAsStream("/Buttons/PauseScreenFINAL.png"));
             Resume[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/Resume.png"));
             Resume[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/ResumeP.png"));
             BTitle[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/BTitle.png"));
