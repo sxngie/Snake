@@ -283,10 +283,21 @@ public class Player {
 		handler.getWorld().body.addLast(tail);
 		handler.getWorld().playerLocation[tail.x][tail.y] = true;
 		score +=5;
+		handler.getGame().Score = score +"";
 	}
 	
 	public void renderScore(Graphics g){
-		//Rectangle board = new Rectangle(handler.getWidth()-10. handler.getHeight()-10, 20,20);
+		Graphics2D g1 = (Graphics2D) g;
+		for(int i=0; i <= 780; i = i + handler.getWorld().GridPixelsize){
+			Font stringFont = new Font("Dialog",Font.PLAIN, 20);
+			g1.setFont(stringFont);
+			g1.setColor(Color.white);
+			g1.drawString("Score " + Integer.toString(this.score),800, 380);
+			g1.drawLine(0, i, handler.getWidth()-110, i);
+			g1.drawLine(i, 0, i, handler.getHeight());
+			
+			
+		}
 		
 	}
 	

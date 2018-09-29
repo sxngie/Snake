@@ -26,6 +26,7 @@ public class GameSetUp implements Runnable {
     private DisplayScreen display;
     private int width, height;
     public String title;
+    public String Score = "";
 
     private boolean running = false;
     private Thread thread;
@@ -177,7 +178,7 @@ public class GameSetUp implements Runnable {
         g.clearRect(0, 0, width, height);
 
         //Draw Here!
-
+        g.drawString("Score: " + Score, handler.getWidth() - 80, handler.getHeight() - 30);
         g.drawImage(loading ,0,0,width,height,null);
         if(State.getState() != null)
             State.getState().render(g);
