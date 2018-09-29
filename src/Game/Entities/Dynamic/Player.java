@@ -159,7 +159,11 @@ public class Player {
 			for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
 				g.setColor(new Color(0,102,0));
 
-				if (playeLocation[i][j] || handler.getWorld().appleLocation[i][j]) {
+				if (playeLocation[i][j]) {
+					g.fillRect((i * handler.getWorld().GridPixelsize), (j * handler.getWorld().GridPixelsize),
+							handler.getWorld().GridPixelsize, handler.getWorld().GridPixelsize);
+				}if(handler.getWorld().appleLocation[i][j]){
+					g.setColor(Color.white);
 					g.fillRect((i * handler.getWorld().GridPixelsize), (j * handler.getWorld().GridPixelsize),
 							handler.getWorld().GridPixelsize, handler.getWorld().GridPixelsize);
 				}
