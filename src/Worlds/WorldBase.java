@@ -50,7 +50,7 @@ public abstract class WorldBase {
     }
     public void render(Graphics g){
         for (int i = 0; i <= 780; i = i + GridPixelsize) {
-            g.setColor(Color.BLACK);
+            g.setColor(new Color(160,160,160));
             g.drawLine(0, i, handler.getWidth() -110 , i);
             g.drawLine(i,0,i,handler.getHeight());
 

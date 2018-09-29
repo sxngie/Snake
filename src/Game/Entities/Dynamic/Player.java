@@ -38,7 +38,7 @@ public class Player {
 	}
 
 	public void tick() {
-		// nKey();
+		suicide();
 		moveCounter++;
 		if (moveCounter >= speedCounter) {
 			checkCollisionAndMove();
@@ -87,7 +87,7 @@ public class Player {
 
 		if (handler.getKeyManager().keyJustPressed(KeyEvent.VK_N)) {
 			lenght++;
-			Tail tail = new Tail(this.xCoord, this.yCoord, handler);
+			Tail tail = new Tail(this.xCoord-1, this.yCoord-1, handler);
 			handler.getWorld().body.addLast(tail);
 		}
 
@@ -144,12 +144,20 @@ public class Player {
 		}
 
 	}
+	
+	public void suicide(){
+		for (Tail tail : handler.getWorld().body) {
+			if (xCoord == tail.x && yCoord == tail.y) {
+				kill();
+			}
+		}
+	}
 
 	public void render(Graphics g, Boolean[][] playeLocation) {
 		Random r = new Random();
 		for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
 			for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
-				g.setColor(Color.GREEN);
+				g.setColor(new Color(0,102,0));
 
 				if (playeLocation[i][j] || handler.getWorld().appleLocation[i][j]) {
 					g.fillRect((i * handler.getWorld().GridPixelsize), (j * handler.getWorld().GridPixelsize),
