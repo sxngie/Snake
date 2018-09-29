@@ -22,6 +22,8 @@ public class Player {
 
 	public int moveCounter;
 	public int speedCounter;
+	
+	public int score;
 
 	public String direction;// is your first name one?
 
@@ -280,16 +282,20 @@ public class Player {
 		}
 		handler.getWorld().body.addLast(tail);
 		handler.getWorld().playerLocation[tail.x][tail.y] = true;
+		score +=5;
 	}
-
+	
+	public void renderScore(Graphics g){
+		//Rectangle board = new Rectangle(handler.getWidth()-10. handler.getHeight()-10, 20,20);
+		
+	}
 	
 	public void kill() {
 		lenght = 0;
 		for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
 			for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
-				handler.getGame().stop();
 				handler.getWorld().playerLocation[i][j] = false;
-
+				State.setState(handler.getGame().gameOverState);
 			}
 		}
 	}
